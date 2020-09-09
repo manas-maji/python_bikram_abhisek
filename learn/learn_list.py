@@ -1,15 +1,28 @@
 
-array = [10, 20, 30, 40, 50, 'Manas', True, False, [1, 2, 3], 50, 50]
+students = []
 
-print(array[0])
-print(array[8][1])
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    students.append([name, score])
 
-fav_pet = 'blackdog'
-print(fav_pet[0:5:3])
+scores = []
+for student in students:
+    scores.append(student[1])
 
-text = 'Python is not only a snake!'
-print(text[-3: -1])
-print(text[-5:])
+low_score = min(scores)
+max_score = max(scores)
+
+for score in scores:
+    if low_score < score < max_score:
+        low_score = score
+
+for student in students:
+    if student[1] == low_score:
+        print(student[0])
+
+
+
 
 
 
